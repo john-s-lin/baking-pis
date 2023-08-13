@@ -29,14 +29,21 @@ class Analyzer:
         cpu_temp: np.ndarray,
         clock_freq: np.ndarray,
     ):
-        fig, ax1 = plt.subplots()
-        ax2 = ax1.twinx()
-        ax1.plot(time_delta, cpu_temp, color="red")
-        ax2.plot(time_delta, clock_freq, color="green")
-        ax1.set_ylim([0, 60])
-        ax1.set_xlabel("Time (s)")
-        ax1.set_ylabel("CPU Temp (C)", color="red")
-        ax2.set_ylabel("Clock Frequency (MHz)", color="green")
-        plt.title(f"CPU Temp and Clock Frequency Over Time {filename}")
+        fig, ax = plt.subplots(nrows=2, ncols=1, sharex=True)
+
+        ax[0].plot(time_delta, cpu_temp, color="red")
+        ax[0].set_ylim([30, 60])
+        ax[0].set_ylabel("CPU Temp (C)", color="red")
+
+        ax[1].plot(time_delta, clock_freq, color="green")
+        ax[1].set_ylabel("Clock Frequency (MHz)", color="green")
+        ax[1].set_xlabel("Time (s)")
+
+        title = (
+            "RPi 4B 2GB Passive Cooling + Thermal Paste"
+            if "cpu_temp_1" in filename
+            else "RPi 4B 4GB Active Cooling + Thermal Pads"
+        )
+        fig.suptitle(title)
         plt.savefig(filename)
         plt.close()

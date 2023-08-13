@@ -8,7 +8,7 @@ Benchmarking passively and actively cooled Raspberry Pis with automated analytic
 
 ```
 Raspberry Pi 4 Model B 2GB
-Armor Heatsink Case
+Armor Passive Heatsink Case
 Thermal paste
 ```
 
