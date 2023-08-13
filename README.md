@@ -22,7 +22,15 @@ wget https://gist.githubusercontent.com/geerlingguy/91d4736afe9321cbfc1062165188
 
 ### Python:
 
+Ensure on your Raspberry Pi that you have Python 3.11.x installed in a virtual environment.
+
 ```bash
+# Create a virtual environment
+python3 -m venv <your-target-dir>
+
+# Activate the virtual environment
+source <your-target-dir>/bin/activate
+
 # Tested on Python 3.11.x
 pip install -r requirements.txt
 ```

@@ -4,6 +4,9 @@
 # Download this script (e.g. with wget) and give it execute permissions (chmod +x).
 # Then run it with ./pi-cpu-stress.sh
 
+# Create a data directory if it doesn't exist in the root of the project.
+mkdir -p data
+
 # Variables.
 if compgen -G "/data/cpu_temp_*.log" > /dev/null; then
   # If there are existing log files, get the latest one and increment the test run.
