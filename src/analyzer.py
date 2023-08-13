@@ -30,7 +30,6 @@ class Analyzer:
         clock_freq: np.ndarray,
     ):
         fig, ax = plt.subplots(nrows=2, ncols=1, sharex=True)
-
         ax[0].plot(time_delta, cpu_temp, color="red")
         ax[0].set_ylim([30, 60])
         ax[0].set_ylabel("CPU Temp (C)", color="red")

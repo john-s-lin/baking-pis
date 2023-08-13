@@ -4,6 +4,12 @@
 sh ./scripts/pi-cpu-stress.sh
 
 # Once completed, run the python script to parse the data for each log in data/
-for file in data/cpu_temp_*.log; do
-  python3 main.py "$file"
+directory="data"
+file_pattern="cpu_temp_*.log"
+
+for file in $directory/$file_pattern; do
+    if [ -f "$file" ]; then
+        echo "Processing $file..."
+        python3 src/main.py "$file"
+    fi
 done
