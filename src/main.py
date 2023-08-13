@@ -8,6 +8,7 @@ import sys
 def generate_image_name(filename: str) -> str:
     return filename.replace(".log", ".png").replace("data", "out")
 
+
 def make_output_dir():
     if not os.path.exists("out"):
         os.mkdir("out")
