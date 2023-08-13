@@ -2,6 +2,17 @@
 
 Benchmarking passively and actively cooled Raspberry Pis with automated analytics.
 
+#### Contents
+
+- [Dependencies](#dependencies)
+  - [Raspberry Pi](#raspberry-pi)
+  - [Python](#python)
+- [Usage](#usage)
+- [Results](#results)
+  - [Passive Cooling](#passive-cooling)
+  - [Active Cooling](#active-cooling)
+- [Issues](#issues)
+
 ## Dependencies
 
 ### Raspberry Pi:
@@ -35,6 +46,13 @@ source <your-target-dir>/bin/activate
 pip install -r requirements.txt
 ```
 
+## Usage
+
+```bash
+# Run the benchmarking script
+make run
+```
+
 ## Results
 
 #### Passive Cooling
@@ -56,3 +74,7 @@ Thermal pads
 ```
 
 ![Raspberry Pi 4 Model B Active Cooling](./out/cpu_temp_2.png)
+
+## Issues
+
+- [ ] `miniconda` is not available for `armv7l` architecture, so packaged Python in Raspberry Pi OS 32-bit is v3.7.3.
